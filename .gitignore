@@ -1,0 +1,36 @@
+# Sensitive Configuration Files
+includes/config.php
+.env
+.env.local
+
+# IDE and Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Temporary Files
+*.log
+*.tmp
+*.temp
+
+# Dependencies (if using composer or npm)
+vendor/
+node_modules/
+composer.lock
+package-lock.json
+
+# OS-specific files
+Thumbs.db
+.DS_Store
+
+# Uploads and Media (optional - can be versioned or excluded)
+images/uploads/
+media/short_videos/
+media/songs/
+media/videos/
+
+# Cache files
+*.cache

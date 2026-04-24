@@ -1,0 +1,82 @@
+# 🖼️ Gallery Upload - Quick Reference
+
+## Access Gallery
+```
+http://localhost/NYAKABINGO_PRIMARY/pages/gallery.php
+```
+
+## Upload a Photo
+
+### Option 1: Drag & Drop
+1. Find the drag-drop zone (blue dashed border with 📷 icon)
+2. Drag your image directly onto it
+3. Click "Upload Image" button
+
+### Option 2: File Selection
+1. Click anywhere in the drag-drop zone
+2. Select image from computer
+3. Click "Upload Image" button
+
+## What You Can Upload
+✓ JPG images (.jpg, .jpeg)
+✓ PNG images (.png)
+✓ GIF animations (.gif)
+✓ WebP images (.webp)
+✗ Max 5MB per file
+✗ Other formats not supported
+
+## After Upload
+- Image appears automatically in gallery
+- Thumbnail created automatically
+- Upload date displayed on hover
+- Click image to view full size
+
+## Where Images Are Stored
+- Server: `c:\xampp\htdocs\NYAKABINGO_PRIMARY\images\uploads\`
+- Web: `http://localhost/NYAKABINGO_PRIMARY/images/uploads/`
+
+## Example Workflow
+
+```
+1. Go to http://localhost/NYAKABINGO_PRIMARY/pages/gallery.php
+2. Scroll to "Upload Photos to Gallery" section
+3. Drag image or click to select
+4. Review image preview
+5. Click "Upload Image"
+6. Wait for success message
+7. Scroll down to see image in gallery
+```
+
+## File Naming
+Uploaded files get automatic names like:
+```
+IMG_1711762400_507a1d.jpg
+IMG_1711762401_8a4f2b.png
+```
+
+This prevents filename conflicts and keeps track of upload time.
+
+## Troubleshooting
+
+**Q: Image won't upload?**
+A: Check file size (must be under 5MB) and format (JPG/PNG/GIF/WebP only)
+
+**Q: Upload button does nothing?**
+A: Make sure you've selected a file and it's a valid image format
+
+**Q: Image doesn't appear after upload?**
+A: Refresh page - it might not show immediately
+
+**Q: File size shows as too large?**
+A: Image must be smaller than 5MB. Try compressing it first.
+
+## Need Help?
+
+Contact school office:
+- Email: info@nyakabingoprimary.ug
+- Phone: +256 760319708
+
+---
+
+**Status**: ✅ Gallery system is live and ready for photo uploads!
+
