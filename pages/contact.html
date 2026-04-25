@@ -170,6 +170,17 @@
     </nav>
 </header>
 
+<script>
+    window.CONTACT_DETAILS = {
+        schoolName: 'NYAKABINGO PRIMARY SCHOOL',
+        location: 'Nyakabingo Parish, Kisoro District, South Western Uganda',
+        district: 'Kisoro District, Uganda',
+        phone: '+256 760319708',
+        email: 'info@nyakabingoprimary.ug',
+        whatsapp: '+256 760319708'
+    };
+</script>
+
 <style>
     .page-header {
         background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
@@ -205,6 +216,44 @@
         .contact-container {
             grid-template-columns: 1fr;
         }
+
+        .page-header {
+            padding: 36px 16px;
+        }
+
+        .page-header h1 {
+            font-size: 30px;
+        }
+
+        .page-header p {
+            font-size: 16px;
+        }
+
+        .contact-info,
+        .contact-form,
+        .map-section {
+            padding: 22px 16px;
+        }
+
+        .contact-action-row,
+        .form-fallback-actions {
+            flex-direction: column;
+        }
+
+        .contact-action,
+        .form-fallback-actions a {
+            width: 100%;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            font-size: 16px;
+        }
+
+        .map-overlay {
+            padding: 14px 14px 18px;
+        }
     }
     
     .contact-info {
@@ -212,6 +261,51 @@
         border-radius: 10px;
         padding: 30px;
         border: 2px solid #e5e7eb;
+    }
+
+    .contact-action-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 14px;
+    }
+
+    .contact-action {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 10px 14px;
+        border-radius: 999px;
+        text-decoration: none;
+        font-weight: 700;
+        border: 1px solid transparent;
+        transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    .contact-action:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 8px 18px rgba(30, 58, 138, 0.14);
+    }
+
+    .contact-action.call {
+        background: #dbeafe;
+        color: #1e3a8a;
+    }
+
+    .contact-action.email {
+        background: #eff6ff;
+        color: #1d4ed8;
+    }
+
+    .contact-action.whatsapp {
+        background: #dcfce7;
+        color: #15803d;
+    }
+
+    .contact-action.map {
+        background: #fff7ed;
+        color: #c2410c;
     }
     
     .contact-info h2 {
@@ -329,25 +423,61 @@
         text-align: center;
     }
     
-    .map-placeholder {
-        background: linear-gradient(135deg, #dbeafe, #bfdbfe);
-        border-radius: 10px;
-        padding: 60px 20px;
+    .map-card {
+        overflow: hidden;
         text-align: center;
-        color: #1e3a8a;
-    }
-    
-    .map-placeholder p {
-        font-size: 18px;
-        margin-bottom: 10px;
-    }
-    
-    .section-header {
         background: #eff6ff;
-        border-left: 4px solid #3b82f6;
-        padding: 20px;
-        border-radius: 5px;
-        margin-bottom: 30px;
+        border-radius: 10px;
+        border: 1px solid #dbeafe;
+    }
+
+    .map-embed {
+        width: 100%;
+        min-height: 320px;
+        border: 0;
+        display: block;
+        background: #e0f2fe;
+    }
+
+    .map-overlay {
+        padding: 18px 18px 20px;
+        background: rgba(255, 255, 255, 0.86);
+        border-top: 1px solid rgba(96, 165, 250, 0.35);
+    }
+
+    .map-overlay a {
+        color: #1d4ed8;
+        font-weight: 700;
+        text-decoration: none;
+    }
+
+    .map-overlay a:hover {
+        text-decoration: underline;
+    }
+
+    .map-actions {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 14px;
+    }
+
+    .map-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 14px;
+        border-radius: 999px;
+        background: #1e3a8a;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 700;
+    }
+
+    .map-link.secondary {
+        background: #dbeafe;
+        color: #1e3a8a;
     }
     
     .section-header h3 {
@@ -382,6 +512,25 @@
         margin: 0;
         padding-left: 20px;
     }
+
+    .form-hint {
+        margin-top: 12px;
+        color: #64748b;
+        font-size: 13px;
+    }
+
+    .form-fallback-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 12px;
+    }
+
+    .form-fallback-actions a {
+        color: #1e3a8a;
+        font-weight: 700;
+        text-decoration: none;
+    }
 </style>
 
 <div class="page-header">
@@ -409,6 +558,9 @@
                     Nyakabingo Parish, Kisoro District, South Western Uganda<br>
                     Kisoro District, Uganda
                 </p>
+                <div class="contact-action-row">
+                    <a class="contact-action map" href="https://www.google.com/maps/search/?api=1&query=Nyakabingo+Primary+School+Nyakabingo+Parish+Kisoro+District+Uganda" target="_blank" rel="noopener noreferrer">Open in Maps</a>
+                </div>
             </div>
             
             <div class="info-item">
@@ -416,7 +568,15 @@
                     <img class="contact-icon" src="/NYAKABINGO/images/icons/phone.svg" alt="Phone icon" loading="lazy">
                     <span>Phone</span>
                 </h3>
-                <p>+256 760319708</p>
+                <p>
+                    <a href="tel:+256760319708" style="color: #1d4ed8; text-decoration: none; font-weight: 600;">
+                        +256 760319708
+                    </a>
+                </p>
+                <div class="contact-action-row">
+                    <a class="contact-action call" href="tel:+256760319708">Call now</a>
+                    <a class="contact-action whatsapp" href="https://wa.me/256760319708" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+                </div>
             </div>
             
             <div class="info-item">
@@ -429,6 +589,10 @@
                 </h3>
                 <p><a href="mailto:info@nyakabingoprimary.ug" style="color: #3b82f6; text-decoration: none;">
                     info@nyakabingoprimary.ug                </a></p>
+                <div class="contact-action-row">
+                    <a class="contact-action email" href="mailto:info@nyakabingoprimary.ug?subject=Nyakabingo%20Primary%20School%20Inquiry">Send email</a>
+                    <a class="contact-action whatsapp" href="https://wa.me/256760319708?text=Hello%20Nyakabingo%20Primary%20School%2C%20I%20would%20like%20to%20ask%20about%20admissions%20or%20school%20activities." target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
+                </div>
             </div>
 
             <div class="info-item">
@@ -437,7 +601,7 @@
                     <span>WhatsApp</span>
                 </h3>
                 <p>
-                    <a href="https://wa.me/256760319708" target="_blank" rel="noopener noreferrer" style="color: #16a34a; text-decoration: none; font-weight: 600;">
+                    <a href="https://wa.me/256760319708?text=Hello%20Nyakabingo%20Primary%20School%2C%20I%20would%20like%20to%20ask%20about%20admissions%20or%20school%20activities." target="_blank" rel="noopener noreferrer" style="color: #16a34a; text-decoration: none; font-weight: 600;">
                         Chat on WhatsApp: +256 760319708                    </a>
                 </p>
             </div>
@@ -473,7 +637,7 @@
             <h2>Send us a Message</h2>
             
             
-            <form method="POST" action="">
+            <form id="contact-form" method="POST" action="">
                 <input type="hidden" name="csrf_token" value="89f2b13b01a39be16d9e6dc044b570f56c44048a193ca001c92a506c4aa10fc7">
                 <div class="form-group">
                     <label for="name">Full Name *</label>
@@ -510,15 +674,33 @@
                 
                 <button type="submit" class="submit-btn">Send Message</button>
             </form>
+            <p class="form-hint">On the live website, this button opens your email app with the message filled in, so it still works on phones and PCs without a backend.</p>
+            <div class="form-fallback-actions">
+                <a href="mailto:info@nyakabingoprimary.ug">Open email directly</a>
+                <a href="https://wa.me/256760319708" target="_blank" rel="noopener noreferrer">Open WhatsApp chat</a>
+            </div>
         </div>
     </div>
     
     <div class="map-section">
         <h2>School Location</h2>
-        <div class="map-placeholder">
-            <p>📍 Nyakabingo Primary School</p>
-            <p>Nyakabingo Parish, Kisoro District, South Western Uganda</p>
-            <p style="font-size: 14px; color: #666; margin-top: 20px;">Interactive map coming soon</p>
+        <div class="map-card">
+            <iframe
+                class="map-embed"
+                title="Nyakabingo Primary School location"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                src="https://www.google.com/maps?q=Nyakabingo+Primary+School+Nyakabingo+Parish+Kisoro+District+Uganda&output=embed">
+            </iframe>
+            <div class="map-overlay">
+                <p>📍 Nyakabingo Primary School</p>
+                <p>Nyakabingo Parish, Kisoro District, South Western Uganda</p>
+                <p style="font-size: 14px; color: #666; margin-top: 12px;">Open the map or use the button below for directions.</p>
+                <div class="map-actions">
+                    <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Nyakabingo+Primary+School+Nyakabingo+Parish+Kisoro+District+Uganda" target="_blank" rel="noopener noreferrer">Open in Google Maps</a>
+                    <a class="map-link secondary" href="https://www.google.com/maps/dir/?api=1&destination=Nyakabingo+Primary+School+Nyakabingo+Parish+Kisoro+District+Uganda" target="_blank" rel="noopener noreferrer">Get directions</a>
+                </div>
+            </div>
         </div>
     </div>
     
@@ -536,6 +718,56 @@
         </ul>
     </div>
 </div>
+
+<script>
+    (function () {
+        const form = document.getElementById('contact-form');
+        if (!form || !window.CONTACT_DETAILS) {
+            return;
+        }
+
+        const subjectMap = {
+            admission: 'Admission Inquiry',
+            academic: 'Academic Question',
+            facility: 'Facility Tour',
+            event: 'Event Information',
+            feedback: 'Feedback',
+            other: 'General Inquiry'
+        };
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const subjectKey = document.getElementById('subject').value;
+            const message = document.getElementById('message').value.trim();
+
+            if (!name || !email || !subjectKey || message.length < 10) {
+                window.alert('Please complete the form before sending.');
+                return;
+            }
+
+            const subject = subjectMap[subjectKey] || 'General Inquiry';
+            const body = [
+                'Full Name: ' + name,
+                'Email Address: ' + email,
+                'Phone Number: ' + (phone || 'N/A'),
+                'Subject: ' + subject,
+                '',
+                'Message:',
+                message,
+                '',
+                'School: ' + window.CONTACT_DETAILS.schoolName,
+                'Location: ' + window.CONTACT_DETAILS.location
+            ].join('\n');
+
+            const mailtoUrl = 'mailto:' + encodeURIComponent(window.CONTACT_DETAILS.email) + '?subject=' + encodeURIComponent('NYAKABINGO PRIMARY SCHOOL - ' + subject) + '&body=' + encodeURIComponent(body);
+            window.location.href = mailtoUrl;
+        });
+    }());
+</script>
 
 
 <footer>
