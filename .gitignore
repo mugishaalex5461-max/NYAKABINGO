@@ -26,11 +26,8 @@ package-lock.json
 Thumbs.db
 .DS_Store
 
-# Uploads and Media (optional - can be versioned or excluded)
-images/uploads/
-media/short_videos/
-media/songs/
-media/videos/
+# Uploads and Media
+# Keep these folders tracked for static hosting so GitHub Pages can serve the site assets.
 
 # Cache files
 *.cache
